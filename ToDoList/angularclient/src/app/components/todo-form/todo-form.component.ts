@@ -23,7 +23,7 @@ export class TodoFormComponent implements OnInit {
   }
 
   gotoTodoList() {
-    this.router.navigate(['/todos']);
+    this.router.navigate(['/todo']);
   }
 
   ngOnInit() {

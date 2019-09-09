@@ -1,25 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ToDo } from '../model/todo';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class TodoService {
 
-  private todosUrl: string;
-  private addTodoUrl: string;
+  private todoUrl: string;
 
   constructor(private http: HttpClient) {
-    this.todosUrl = 'http://localhost:8080/todos';
-    this.addTodoUrl = 'http://localhost:8080/addtodo'
+    this.todoUrl = 'http://localhost:8080/todo';
   }
 
   public findAll(): Observable<ToDo[]> {
-    return this.http.get<ToDo[]>(this.todosUrl);
+    return this.http.get<ToDo[]>(this.todoUrl);
+  }
+
+  public getById(id: number): ToDo {
+    return this.http.get<ToDo>(this.todoUrl + '/' + id);
   }
 
   public save(todo: ToDo) {
-    return this.http.post<ToDo>(this.addTodoUrl, todo);
+    return this.http.post<ToDo>(this.todoUrl, todo);
+  }
+
+  public update(id: number, todo: ToDo) {
+    const urlParams = new HttpParams().set("id", id.toString());
+    return this.http.put(this.todoUrl, todo, { params: urlParams});
+  }
+
+  public delete(id: number){
+    return this.http.delete(this.todoUrl+'/delete/' + id);
   }
 
 }

@@ -20,13 +20,13 @@ public class ToDoController {
         this.toDoRepository = toDoRepository;
     }
 
-    @GetMapping("/todos")
+    @GetMapping("/todo")
     public ResponseEntity<List<ToDoEntity>> getToDos() {
         return new ResponseEntity((List<ToDoEntity>) toDoRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/todo{id}")
-    public ResponseEntity<ToDoEntity> getToDo(@RequestParam("id") Long id) {
+    @GetMapping("/todo/{id}")
+    public ResponseEntity<ToDoEntity> getToDo(@PathVariable Long id) {
         Optional<ToDoEntity> toDoEntity = toDoRepository.findById(id);
         if (toDoEntity.isPresent()) {
             return new ResponseEntity(toDoEntity.get(),HttpStatus.OK);
@@ -35,9 +35,28 @@ public class ToDoController {
         }
     }
 
-    @PostMapping("/addtodo")
+    @PostMapping("/todo")
     public ResponseEntity addUser(@RequestBody ToDoEntity toDoEntity) {
         toDoRepository.save(toDoEntity);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PutMapping("/todo")
+    public ResponseEntity updateToDo(@RequestBody ToDoEntity toDoEntity, @RequestParam Long id) {
+        Optional<ToDoEntity> updateToDoEntity = toDoRepository.findById(id);
+        if (updateToDoEntity.isPresent()) {
+            updateToDoEntity.get().setName(toDoEntity.getName());
+            updateToDoEntity.get().setDescription(toDoEntity.getDescription());
+            toDoRepository.save(updateToDoEntity.get());
+            return new ResponseEntity(HttpStatus.OK);
+        } else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/todo/delete/{id}")
+    public ResponseEntity deleteToDo(@PathVariable Long id) {
+        toDoRepository.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
     }
 

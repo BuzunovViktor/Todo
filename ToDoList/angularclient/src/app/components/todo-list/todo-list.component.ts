@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToDo } from '../../model/todo';
 import { TodoService } from '../../service/todo-service.service';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,8 +12,7 @@ export class TodoListComponent implements OnInit {
 
   todos: ToDo[];
 
-
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService, private router: Router) { }
 
   ngOnInit() {
   this.todoService.findAll().subscribe(data => {
@@ -20,8 +20,13 @@ export class TodoListComponent implements OnInit {
       });
   }
 
-  onClick() {
-    console.log("Click");
+  delete(id: number) {
+    this.todoService.delete(id).subscribe(result => this.gotoTodoList());
+  }
+
+  gotoTodoList() {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.router.navigate(['/todo']));
   }
 
 }

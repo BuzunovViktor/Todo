@@ -6,16 +6,18 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Description</th>
+        <th scope="col">Edit</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let i = index">
-        <td>{{i}}</td>
-      </tr>
-      <tr *ngFor="let todo of todos">
-        <td>{{ todo.id }}</td>
+      <tr *ngFor="let todo of todos;">
+        <td data-id='{{ todo.id }}'>{{ todo.id }}</td>
         <td>{{ todo.name }}</td>
-        <td class="hide" (click)="onClick()">{{ todo.description }}</td>
+        <td>{{ todo.description }}</td>
+        <td>
+          <a [routerLink]="['/edittodo', todo.id]" class="btn btn-info"><i class="fas fa-edit"></i></a>
+          <button (click)="delete(todo.id)" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+        </td>
       </tr>
       </tbody>
     </table>

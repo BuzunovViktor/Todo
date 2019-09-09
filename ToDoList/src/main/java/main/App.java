@@ -12,16 +12,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.stream.Stream;
 
 @SpringBootApplication
-public class Main {
+public class App {
     public static void main(String[] args) {
-        new SpringApplication(Main.class).run(args);
+        new SpringApplication(App.class).run(args);
     }
 
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/addtodo").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/todo").allowedOrigins("http://localhost:4200");
             }
         };
     }
