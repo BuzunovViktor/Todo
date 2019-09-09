@@ -7,9 +7,11 @@ import { Observable } from 'rxjs/Observable';
 export class TodoService {
 
   private todosUrl: string;
+  private addTodoUrl: string;
 
   constructor(private http: HttpClient) {
     this.todosUrl = 'http://localhost:8080/todos';
+    this.addTodoUrl = 'http://localhost:8080/addtodo'
   }
 
   public findAll(): Observable<ToDo[]> {
@@ -17,6 +19,7 @@ export class TodoService {
   }
 
   public save(todo: ToDo) {
-    return this.http.post<ToDo>(this.todosUrl, todo);
+    return this.http.post<ToDo>(this.addTodoUrl, todo);
   }
+
 }

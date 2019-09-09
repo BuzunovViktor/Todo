@@ -20,4 +20,8 @@ export class TodoListComponent implements OnInit {
       });
   }
 
+  onClick() {
+    console.log("Click");
+  }
+
 }
