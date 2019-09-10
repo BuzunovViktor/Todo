@@ -10,8 +10,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let todo of todos;">
-        <td data-id='{{ todo.id }}'>{{ todo.id }}</td>
+      <tr *ngFor="let todo of todos; index as i">
+        <td data-id='{{ todo.id }}'>{{i+1}}</td>
         <td>{{ todo.name }}</td>
         <td>{{ todo.description }}</td>
         <td>

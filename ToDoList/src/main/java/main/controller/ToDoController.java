@@ -54,7 +54,7 @@ public class ToDoController {
         }
     }
 
-    @DeleteMapping("/todo/delete/{id}")
+    @DeleteMapping("/todo/{id}")
     public ResponseEntity deleteToDo(@PathVariable Long id) {
         toDoRepository.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);

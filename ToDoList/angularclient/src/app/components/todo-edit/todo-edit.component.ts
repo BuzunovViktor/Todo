@@ -16,19 +16,16 @@ export class TodoEditComponent implements OnInit {
   todo: ToDo;
 
   constructor(private route: ActivatedRoute, private router: Router, private todoService: TodoService, private formBuilder: FormBuilder) {
-      this.id = route.snapshot.params['id']
-      this.todo = this.todoService.getById(this.id).subscribe(data => {
-        this.todo = data;
-      });
-
-    }
-
-  onSubmit() {
-    this.todoService.update(this.id, this.todo).subscribe(result => this.gotoTodoList());
+    this.id = route.snapshot.params['id'];
+    this.todoService.getById(this.id).subscribe(data => {
+      this.todo = data;
+    });
   }
 
-  gotoTodoList() {
-    this.router.navigate(['/todo']);
+  onSubmit() {
+    this.todoService.update(this.id, this.todo).subscribe(data => {
+      this.gotoTodoList();
+    });
   }
 
   gotoTodoList() {

@@ -16,7 +16,7 @@ export class TodoService {
     return this.http.get<ToDo[]>(this.todoUrl);
   }
 
-  public getById(id: number): ToDo {
+  public getById(id: number): Observable<ToDo> {
     return this.http.get<ToDo>(this.todoUrl + '/' + id);
   }
 
@@ -30,7 +30,7 @@ export class TodoService {
   }
 
   public delete(id: number){
-    return this.http.delete(this.todoUrl+'/delete/' + id);
+    return this.http.delete(this.todoUrl + '/' + id);
   }
 
 }

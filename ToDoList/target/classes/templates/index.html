@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Spring Boot - Angular Application</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/24ca88e31d.js"></script>
+</head>
+<body>
+<app-root>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align:center">
+                    <h1 style="margin-top: 60px;">Welcome to Application!</h1>
+                </div>
+                <div class="card my-5">
+                    <div class="card-body">
+                        <ul class="text-center list-inline py-3">
+                            <li class="list-inline-item"><a href="http://localhost:4200/todo" class="btn btn-info">Go to SPA</a></li>
+                            <li class="list-inline-item">My best regards...</li>
+                        </ul>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="todo: ${todoList}">
+                        <td th:text="${todo.name}"></td>
+                        <td th:text="${todo.description}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</app-root>
+</body>
+</html>
