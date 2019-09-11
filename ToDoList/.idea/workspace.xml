@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa0a2e9d-cc53-4f38-9126-8bffc3769bd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularclient/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularclient/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularclient/src/app/components/todo-edit/todo-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularclient/src/app/components/todo-edit/todo-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularclient/src/app/components/todo-list/todo-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularclient/src/app/components/todo-list/todo-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularclient/src/app/service/todo-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularclient/src/app/service/todo-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/DefaultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/controller/ToDoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/controller/ToDoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/todolist.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/todolist.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/DefaultController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/DefaultController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/controller/ToDoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/controller/ToDoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +48,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567793063069" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/angularclient/src/app/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
